@@ -1,0 +1,28 @@
+:root {
+    --color-light: #fff;
+    --color-dark: #000;
+    --color-accent: #298C70;
+
+    --main-font: "wixmadefordisplay", sans-serif;
+
+    --container-width: 1500px;
+    --container-padding-x: 30px;
+
+    --gradient: linear-gradient(0turn, rgba(41, 140, 112, 1) 0%, rgba(92, 236, 148, 1) 100%);
+}
+
+$transition-duration: 0.2s;
+
+$border-radius-btn: 50px;
+
+$breakpoints: (
+    sm: 576px,
+    // телефоны
+    md: 768px,
+    // маленькие планшеты
+    lg: 1024px,
+    // планшеты/ноуты
+    xl: 1280px,
+    // стандартные десктопы
+    xxl: 1440px // широкие мониторы
+);

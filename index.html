@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Center</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body class="index">
+    <noscript>
+        <p>
+            Ваш браузер не поддерживает JavaScript, Некоторые функции на сайте будут
+            работать некорректно, попробуйте изменить ваш браузер
+        </p>
+    </noscript>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="header__logo" title="Логотип">
+                <svg xmlns="http://www.w3.org/2000/svg" width="178" height="21" fill="none" viewBox="0 0 178 21">
+                    <path fill="url(#a)"
+                        d="M163.913 20.468h-2.688V.448h7.896q2.043 0 3.556.728t2.352 2.016q.868 1.288.868 3.024t-.868 3.024q-.84 1.288-2.352 2.016t-3.556.728h-5.488V9.66h5.488q1.875 0 2.94-.896 1.092-.924 1.092-2.548t-1.092-2.52q-1.065-.924-2.94-.924h-5.208zm13.972 0h-3.388l-7.504-9.324h3.136z" />
+                    <path fill="url(#b)"
+                        d="M157.995 20.468h-13.524V.448h13.524v2.324h-10.836v15.372h10.836zm-.532-9.044h-10.584V9.1h10.584z" />
+                    <path fill="url(#c)" d="M135.011 20.468h-2.688V2.52h2.688zM141.563 2.8h-15.764V.448h15.764z" />
+                    <path fill="url(#d)"
+                        d="M109.079 20.468h-2.604V.448h2.884l11.704 17.248h-.756V.448h2.604v20.02h-2.884L108.295 3.22h.784z" />
+                    <path fill="url(#e)"
+                        d="M103.272 20.468H89.748V.448h13.524v2.324H92.436v15.372h10.836zm-.532-9.044H92.156V9.1h10.584z" />
+                    <path fill="url(#f)"
+                        d="m84.843 15.316 1.876 1.82q-1.316 1.735-3.416 2.772-2.1 1.008-4.62 1.008-2.212 0-4.088-.784a9.8 9.8 0 0 1-3.22-2.184 10.6 10.6 0 0 1-2.156-3.332q-.756-1.904-.756-4.144t.784-4.144q.784-1.932 2.156-3.332A9.9 9.9 0 0 1 74.679.784Q76.554 0 78.767 0q2.492 0 4.564 1.036 2.071 1.008 3.388 2.744L84.843 5.6a7.6 7.6 0 0 0-2.548-2.324q-1.54-.868-3.528-.868-2.128 0-3.836 1.064-1.68 1.036-2.66 2.856-.98 1.792-.98 4.144 0 2.296.98 4.116t2.66 2.884q1.708 1.035 3.836 1.036 1.987 0 3.528-.868a7.6 7.6 0 0 0 2.548-2.324" />
+                    <path fill="url(#g)"
+                        d="M54.063 20.468h-2.688v-8.596L43.871.448h3.136l6.104 9.688h-.728L58.515.448h3.052l-7.504 11.48z" />
+                    <path fill="url(#h)" d="M36.148 20.468h-2.689V2.52h2.688zM42.699 2.8H26.937V.448H42.7z" />
+                    <path fill="url(#i)" d="M23.973 20.468h-2.688V.448h2.688z" />
+                    <path fill="url(#j)"
+                        d="m16.38 15.316 1.876 1.82q-1.316 1.735-3.416 2.772-2.1 1.008-4.62 1.008-2.212 0-4.088-.784a9.8 9.8 0 0 1-3.22-2.184 10.6 10.6 0 0 1-2.156-3.332Q0 12.712 0 10.472t.784-4.144q.784-1.932 2.156-3.332A9.9 9.9 0 0 1 6.216.784Q8.091 0 10.304 0q2.492 0 4.564 1.036 2.071 1.008 3.388 2.744L16.38 5.6a7.6 7.6 0 0 0-2.548-2.324q-1.54-.868-3.528-.868-2.128 0-3.836 1.064-1.68 1.036-2.66 2.856-.98 1.792-.98 4.144 0 2.296.98 4.116t2.66 2.884q1.708 1.035 3.836 1.036 1.987 0 3.528-.868a7.6 7.6 0 0 0 2.548-2.324" />
+                    <defs>
+                        <linearGradient id="a" x1="-1.485" x2="178.515" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="b" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="c" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="d" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="e" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="f" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="g" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="h" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="i" x1="-1.483" x2="178.517" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                        <linearGradient id="j" x1="-1.484" x2="178.516" y1="9.468" y2="9.468"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#fff" />
+                            <stop offset="1" stop-color="#b1b1b1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </a>
+
+            <button class="burger" id="burgerBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header__nav__menu">
+                <nav class="menu" id="menu" aria-label="Главное меню">
+                    <div class="menu__content">
+                        <div class="menu__left">
+                            <ul class="menu__contacts">
+                                <li><a href="tel:+74952217772">+7 (495) 221 7772</a></li>
+                                <li><a href="mailto:info@citym3.ru">info@citym3.ru</a></li>
+                                <li>
+                                    <a href="https://yandex.ru/maps/213/moscow/house/presnenskaya_naberezhnaya_12/Z04YcwRnTUYDQFtvfXt1eHpgZw==/?ll=37.537434%2C55.749633&z=17"
+                                        target="_blank" rel="noopener noreferrer">г.
+                                        Москва, Пресненская наб., 12 МФК "Башня Федерация"</a>
+                                </li>
+                            </ul>
+                            <div class="menu__socials">
+                                <a href="/" title="Переход в телеграм" target="_blank" rel="noopener noreferrer">
+                                    <svg width="25" height="21" viewBox="0 0 25 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24.9202 1.8997L21.1327 19.6309C20.8502 20.8797 20.1252 21.1609 19.0777 20.5972L13.3964 16.4072L10.6152 19.066C10.3339 19.3484 10.0514 19.6309 9.40645 19.6309L9.8502 13.7872L20.4477 4.1572C20.8902 3.71345 20.3264 3.5522 19.7627 3.91595L6.58645 12.216L0.903946 10.4834C-0.344804 10.0809 -0.344804 9.23345 1.18645 8.67095L23.2677 0.0872003C24.3552 -0.2353 25.2827 0.3297 24.9202 1.8997Z"
+                                            fill="#9F9F9F" />
+                                    </svg>
+                                </a>
+                                <a href="/" title="Переход в ватсап" target="_blank" rel="noopener noreferrer">
+                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.5 0C19.4038 0 25 5.59625 25 12.5C25 19.4037 19.4038 25 12.5 25C10.291 25.0038 8.12075 24.4192 6.21252 23.3063L0.00501932 25L1.69502 18.79C0.581217 16.8812 -0.00385203 14.71 1.90859e-05 12.5C1.90859e-05 5.59625 5.59627 0 12.5 0ZM8.24002 6.625L7.99002 6.635C7.82838 6.64614 7.67045 6.68859 7.52502 6.76C7.38949 6.83689 7.26572 6.93287 7.15752 7.045C7.00752 7.18625 6.92252 7.30875 6.83127 7.4275C6.36892 8.02863 6.11999 8.76664 6.12377 9.525C6.12627 10.1375 6.28627 10.7338 6.53627 11.2913C7.04752 12.4187 7.88877 13.6125 8.99877 14.7188C9.26627 14.985 9.52877 15.2525 9.81127 15.5013C11.1906 16.7155 12.8341 17.5912 14.6113 18.0588L15.3213 18.1675C15.5525 18.18 15.7838 18.1625 16.0163 18.1512C16.3803 18.1321 16.7356 18.0335 17.0575 17.8625C17.2211 17.7779 17.3808 17.6862 17.5363 17.5875C17.5363 17.5875 17.5892 17.5517 17.6925 17.475C17.8613 17.35 17.965 17.2612 18.105 17.115C18.21 17.0067 18.2975 16.8808 18.3675 16.7375C18.465 16.5338 18.5625 16.145 18.6025 15.8212C18.6325 15.5737 18.6238 15.4388 18.62 15.355C18.615 15.2213 18.5038 15.0825 18.3825 15.0238L17.655 14.6975C17.655 14.6975 16.5675 14.2238 15.9025 13.9213C15.8329 13.8909 15.7584 13.8736 15.6825 13.87C15.597 13.8611 15.5105 13.8706 15.429 13.898C15.3475 13.9254 15.2728 13.97 15.21 14.0287C15.2038 14.0262 15.12 14.0975 14.2163 15.1925C14.1644 15.2622 14.0929 15.3149 14.011 15.3438C13.9291 15.3728 13.8404 15.3767 13.7563 15.355C13.6748 15.3333 13.595 15.3057 13.5175 15.2725C13.3625 15.2075 13.3088 15.1825 13.2025 15.1375C12.4849 14.8249 11.8206 14.4018 11.2338 13.8838C11.0763 13.7463 10.93 13.5962 10.78 13.4513C10.2883 12.9803 9.85971 12.4475 9.50502 11.8663L9.43127 11.7475C9.3791 11.6672 9.33632 11.5813 9.30377 11.4913C9.25627 11.3075 9.38002 11.16 9.38002 11.16C9.38002 11.16 9.68377 10.8275 9.82502 10.6475C9.96252 10.4725 10.0788 10.3025 10.1538 10.1813C10.3013 9.94375 10.3475 9.7 10.27 9.51125C9.92002 8.65625 9.55835 7.80583 9.18502 6.96C9.11127 6.7925 8.89252 6.6725 8.69377 6.64875C8.62627 6.64042 8.55877 6.63375 8.49127 6.62875C8.32343 6.61912 8.15513 6.62079 7.98752 6.63375L8.24002 6.625Z"
+                                            fill="#9F9F9F" />
+                                    </svg>
+                                </a>
+                                <a href="/" title="Переход в ютуб" target="_blank" rel="noopener noreferrer">
+                                    <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 12.5L16.4875 8.75L10 5V12.5ZM24.45 2.7125C24.6125 3.3 24.725 4.0875 24.8 5.0875C24.8875 6.0875 24.925 6.95 24.925 7.7L25 8.75C25 11.4875 24.8 13.5 24.45 14.7875C24.1375 15.9125 23.4125 16.6375 22.2875 16.95C21.7 17.1125 20.625 17.225 18.975 17.3C17.35 17.3875 15.8625 17.425 14.4875 17.425L12.5 17.5C7.2625 17.5 4 17.3 2.7125 16.95C1.5875 16.6375 0.8625 15.9125 0.55 14.7875C0.3875 14.2 0.275 13.4125 0.2 12.4125C0.1125 11.4125 0.0749999 10.55 0.0749999 9.8L0 8.75C0 6.0125 0.2 4 0.55 2.7125C0.8625 1.5875 1.5875 0.8625 2.7125 0.55C3.3 0.3875 4.375 0.275 6.025 0.2C7.65 0.1125 9.1375 0.0749999 10.5125 0.0749999L12.5 0C17.7375 0 21 0.2 22.2875 0.55C23.4125 0.8625 24.1375 1.5875 24.45 2.7125Z"
+                                            fill="#9F9F9F" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu__right">
+                            <h3>Наши услуги</h3>
+                            <ul class="menu__right__list">
+                                <li class="menu__right__item uppercase">
+                                    <a href="/">Дизайн и проектирование</a>
+                                </li>
+                                <li class="menu__right__item uppercase">
+                                    <a href="/">Строительно-монтажные работы</a>
+                                </li>
+                                <li class="menu__right__item uppercase">
+                                    <a href="/">Инженерные системы</a>
+                                </li>
+                                <li class="menu__right__item uppercase">
+                                    <a href="/">Мебельное оснащение объектов</a>
+                                </li>
+                            </ul>
+                            <nav class="menu__right__nav">
+                                <h3>О компании</h3>
+                                <ul class="menu__right__list">
+                                    <li class="menu__right__item uppercase">
+                                        <a href="/">Портфолио</a>
+                                    </li>
+                                    <li class="menu__right__item uppercase">
+                                        <a href="/">Отзывы</a>
+                                    </li>
+                                    <li class="menu__right__item uppercase">
+                                        <a href="/">Контакты</a>
+                                    </li>
+                                    <li class="menu__right__item uppercase">
+                                        <a href="/">Новости</a>
+                                    </li>
+                                    <li class="menu__right__item uppercase">
+                                        <a href="/">О нас</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </nav>
+
+                <nav class="header__nav">
+                    <ul class="header__nav__list">
+                        <li class="header__nav__item">
+                            <a href="/">
+                                Проекты
+                            </a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="/">
+                                Компания
+                            </a>
+                        </li>
+                        <li class="header__nav__item">
+                            <a href="/">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a href="tel:+74952217772" class="header__contacts">
+                +7 (495) 221 7772
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+            </div>
+        </div>
+        <div class="swiper-slider-progress">
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+        </div>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__title">
+                    <h1>Комплексные решения для офисных и коммерческих объектов</h1>
+                </div>
+                <div class="hero__description uppercase">
+                    <p><span>Agile / working / Гибридные пространства</span></p>
+                </div>
+                <a href="/" class="hero__portfolio__link button" target="_blank" rel="noopener noreferrer">
+                    <p>Портфолио</p>
+                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.6958 0.300018C8.01337 -0.0642391 8.56613 -0.102098 8.93037 0.215457L14.2834 4.88215C14.4739 5.04828 14.5833 5.28885 14.5833 5.54166C14.5833 5.7946 14.4739 6.03505 14.2834 6.20118L8.93037 10.8678C8.56613 11.1854 8.01337 11.1476 7.6958 10.7834C7.37823 10.419 7.41615 9.86638 7.78038 9.54881L11.3731 6.41666L0.875 6.41666C0.391755 6.41666 0 6.0249 0 5.54166C0 5.05843 0.391755 4.66666 0.875 4.66666L11.3731 4.66666L7.78038 1.53456C7.41615 1.21701 7.37823 0.664274 7.6958 0.300018Z"
+                            fill="white" />
+                    </svg>
+                </a>
+                <div class="hero__bottom">
+                    <div class="hero__video">
+                        <div class="hero__video__title uppercase">
+                            <p><span>взгляните на процесс нашей работы</span></p>
+                        </div>
+                        <div class="hero__video__img">
+                            <img src="./imgs/VideoPrewMain.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="company__services">
+            <div class="container">
+                <div class="company__breadcrumbs uppercase">
+                    <p>Комплекс строительных услуг</p>
+                </div>
+                <div class="company__title title">
+                    <h2>Наша компания осуществляет комплексный спектр профессиональных услуг в сфере строительных и
+                        отделочных работ</h2>
+                    <a href="/" class="company__link uppercase button">
+                        <p>Обсудить проект</p>
+                    </a>
+                </div>
+                <ul class="company__list">
+                    <li class="company__item">
+                        <div class="company__item__img">
+                            <img src="./imgs/companyFirst.png" alt="" loading="lazy">
+                            <div class="company__item__info">
+                                <div class="company__item__info__price">
+                                    <p><span>от 4 000₽ за м <sup>2</sup></span></p>
+                                </div>
+                                <a href="/" class="company__item__info__link" title="Кнопка перехода на текущий объект"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.6958 0.300018C8.01337 -0.0642391 8.56613 -0.102098 8.93037 0.215457L14.2834 4.88215C14.4739 5.04828 14.5833 5.28885 14.5833 5.54166C14.5833 5.7946 14.4739 6.03505 14.2834 6.20118L8.93037 10.8678C8.56613 11.1854 8.01337 11.1476 7.6958 10.7834C7.37823 10.419 7.41615 9.86638 7.78038 9.54881L11.3731 6.41666L0.875 6.41666C0.391755 6.41666 0 6.0249 0 5.54166C0 5.05843 0.391755 4.66666 0.875 4.66666L11.3731 4.66666L7.78038 1.53456C7.41615 1.21701 7.37823 0.664274 7.6958 0.300018Z"
+                                            fill="white" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="company__item__heading">
+                                <div class="company__item__title uppercase">
+                                    <p><strong>Дизайн и проектирование</strong></p>
+                                </div>
+                                <div class="company__item__description">
+                                    <p>Разрабатываем эксклюзивные дизайн-проекты и архитектурные решения, совмещая
+                                        эстетику
+                                        и практичность</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="company__item">
+                        <div class="company__item__img">
+                            <img src="./imgs/companySecond.png" alt="" loading="lazy">
+                            <div class="company__item__info">
+                                <div class="company__item__info__price">
+                                    <p><span>от 12 000₽ за м <sup>2</sup></span></p>
+                                </div>
+                                <a href="/" class="company__item__info__link" title="Кнопка перехода на текущий объект"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.6958 0.300018C8.01337 -0.0642391 8.56613 -0.102098 8.93037 0.215457L14.2834 4.88215C14.4739 5.04828 14.5833 5.28885 14.5833 5.54166C14.5833 5.7946 14.4739 6.03505 14.2834 6.20118L8.93037 10.8678C8.56613 11.1854 8.01337 11.1476 7.6958 10.7834C7.37823 10.419 7.41615 9.86638 7.78038 9.54881L11.3731 6.41666L0.875 6.41666C0.391755 6.41666 0 6.0249 0 5.54166C0 5.05843 0.391755 4.66666 0.875 4.66666L11.3731 4.66666L7.78038 1.53456C7.41615 1.21701 7.37823 0.664274 7.6958 0.300018Z"
+                                            fill="white" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="company__item__heading">
+                                <div class="company__item__title uppercase">
+                                    <p><strong>Инженерные системы</strong></p>
+                                </div>
+                                <div class="company__item__description">
+                                    <p>Проектируем и внедряем современные инженерные коммуникации для стабильной работы
+                                        и вашего максимального комфорта</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="company__item">
+                        <div class="company__item__img">
+                            <img src="./imgs/Companythirth.png" alt="" loading="lazy">
+                            <div class="company__item__info">
+                                <div class="company__item__info__price">
+                                    <p><span>от 110 000₽ за м <sup>2</sup></span></p>
+                                </div>
+                                <a href="/" class="company__item__info__link" title="Кнопка перехода на текущий объект"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.6958 0.300018C8.01337 -0.0642391 8.56613 -0.102098 8.93037 0.215457L14.2834 4.88215C14.4739 5.04828 14.5833 5.28885 14.5833 5.54166C14.5833 5.7946 14.4739 6.03505 14.2834 6.20118L8.93037 10.8678C8.56613 11.1854 8.01337 11.1476 7.6958 10.7834C7.37823 10.419 7.41615 9.86638 7.78038 9.54881L11.3731 6.41666L0.875 6.41666C0.391755 6.41666 0 6.0249 0 5.54166C0 5.05843 0.391755 4.66666 0.875 4.66666L11.3731 4.66666L7.78038 1.53456C7.41615 1.21701 7.37823 0.664274 7.6958 0.300018Z"
+                                            fill="white" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="company__item__heading">
+                                <div class="company__item__title uppercase">
+                                    <p><strong>Строительно-монтажные работы</strong></p>
+                                </div>
+                                <div class="company__item__description">
+                                    <p>Выполняем строительство и отделку под ключ с гарантией качества и строгим
+                                        соблюдением сроков</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="company__item">
+                        <div class="company__item__img">
+                            <img src="./imgs/companyFourth.png" alt="" loading="lazy">
+                            <div class="company__item__info">
+                                <div class="company__item__info__price">
+                                    <p><span>от 25 000₽ за м <sup>2</sup></span></p>
+                                </div>
+                                <a href="/" class="company__item__info__link" title="Кнопка перехода на текущий объект"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M7.6958 0.300018C8.01337 -0.0642391 8.56613 -0.102098 8.93037 0.215457L14.2834 4.88215C14.4739 5.04828 14.5833 5.28885 14.5833 5.54166C14.5833 5.7946 14.4739 6.03505 14.2834 6.20118L8.93037 10.8678C8.56613 11.1854 8.01337 11.1476 7.6958 10.7834C7.37823 10.419 7.41615 9.86638 7.78038 9.54881L11.3731 6.41666L0.875 6.41666C0.391755 6.41666 0 6.0249 0 5.54166C0 5.05843 0.391755 4.66666 0.875 4.66666L11.3731 4.66666L7.78038 1.53456C7.41615 1.21701 7.37823 0.664274 7.6958 0.300018Z"
+                                            fill="white" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="company__item__heading">
+                                <div class="company__item__title uppercase">
+                                    <p><strong>Мебельное оснащение объектов</strong></p>
+                                </div>
+                                <div class="company__item__description">
+                                    <p>Завершаем образ вашего пространства подбором и поставкой качественной мебели от
+                                        проверенных производителей</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="projects__list">
+                <div class="project__item">
+                    <div class="container">
+                        <div class="project__item__inner">
+                            <div class="project__item__heading">
+                                <div class="project__item__title title">
+                                    <h2>Башня Федерация 15 этаж</h2>
+                                </div>
+                                <div class="project__item__description">
+                                    <p>Объем работ: Проектирование инженерных систем, дизайн проект Комплексные работы
+                                        под
+                                        ключ,
+                                        площадь: 2500 м2, Срок: 8 мес.</p>
+                                </div>
+                            </div>
+                            <a href="/" class="project__item__link button uppercase">
+                                <p>Смотреть проект</p>
+                            </a>
+                        </div>
+                        <div class="project__item__right__img">
+                            <img src="./imgs/projectFirstImg.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="project__item">
+                    <div class="container">
+                        <div class="project__item__inner">
+                            <div class="project__item__heading">
+                                <div class="project__item__title title">
+                                    <h2>Башня Империя Паркинг</h2>
+                                </div>
+                                <div class="project__item__description">
+                                    <p>Объем работ: Проектирование инженерных систем, дизайн проект Комплексные работы
+                                        под ключ, площадь: 2500 м2, Срок: 8 мес.</p>
+                                </div>
+                            </div>
+                            <a href="/" class="project__item__link button uppercase">
+                                <p>Смотреть проект</p>
+                            </a>
+                        </div>
+                        <div class="project__item__right__img">
+                            <img src="./imgs/projectSecondImg.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="project__item">
+                    <div class="container">
+                        <div class="project__item__inner">
+                            <div class="project__item__heading">
+                                <div class="project__item__title title">
+                                    <h2>el GAUCHITO</h2>
+                                </div>
+                                <div class="project__item__description">
+                                    <p>Объем работ: Проектирование, инженерное оснащение, строительно-монтажные
+                                        работы,поставка мебели, площадь: 450 м2, Срок: 6 мес</p>
+                                </div>
+                            </div>
+                            <a href="/" class="project__item__link button uppercase">
+                                <p>Смотреть проект</p>
+                            </a>
+                        </div>
+                        <div class="project__item__right__img">
+                            <img src="./imgs/projectThirthImg.png" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="perfomances">
+            <div class="container">
+                <div class="perfomances__img">
+                    <img src="./imgs/perfomancesImg.png" alt="" loading="lazy">
+                </div>
+                <div class="perfomances__inner">
+                    <div class="perfomances__breadcrumbs uppercase">
+                        <p>Наши работы</p>
+                    </div>
+                    <div class="perfomances__heading">
+                        <div class="perfomances__title title">
+                            <h2>Абсолютное внимание к деталям</h2>
+                        </div>
+                        <div class="perfomances__description">
+                            <p>В каждом проекте мы соединяем эстетику, инженерную точность и безупречное исполнение.
+                                Наши работы говорят сами за себя — убедитесь в этом, просматривая портфолио</p>
+                        </div>
+                    </div>
+                    <a href="/" class="perfomances__link button uppercase">
+                        <p>Смотреть работы</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="container">
+                <div class="advantages__inner">
+                    <div class="advantages__breadcrumbs uppercase">
+                        <p>о компании</p>
+                    </div>
+                    <div class="advantages__title">
+                        <svg width="523" height="60" viewBox="0 0 523 60" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M483.464 58.4798H474.264V1.27979H497.144C501.09 1.27979 504.557 1.99979 507.544 3.43979C510.53 4.82645 512.85 6.79978 514.504 9.35979C516.21 11.8665 517.064 14.8265 517.064 18.2398C517.064 21.5998 516.21 24.5598 514.504 27.1198C512.85 29.6798 510.53 31.6798 507.544 33.1198C504.557 34.5065 501.09 35.1998 497.144 35.1998H482.664V27.3598H497.144C500.397 27.3598 502.957 26.5598 504.824 24.9598C506.744 23.3064 507.704 21.0665 507.704 18.2398C507.704 15.4131 506.744 13.1998 504.824 11.5998C502.957 9.94645 500.397 9.11978 497.144 9.11978H483.464V58.4798ZM522.824 58.4798H511.384L490.584 31.8398H501.144L522.824 58.4798Z"
+                                fill="url(#paint0_linear_48_3)" />
+                            <path
+                                d="M464.561 58.4798H425.201V1.27979H464.561V9.11978H434.401V50.6398H464.561V58.4798ZM463.041 33.3598H433.601V25.5198H463.041V33.3598Z"
+                                fill="url(#paint1_linear_48_3)" />
+                            <path
+                                d="M398.11 58.4798H388.91V8.39978H398.11V58.4798ZM416.43 9.19978H370.67V1.27979H416.43V9.19978Z"
+                                fill="url(#paint2_linear_48_3)" />
+                            <path
+                                d="M322.831 58.4798H313.871V1.27979H323.631L356.111 49.4398H352.991V1.27979H361.951V58.4798H352.191L319.631 10.3198H322.831V58.4798Z"
+                                fill="url(#paint3_linear_48_3)" />
+                            <path
+                                d="M304.249 58.4798H264.889V1.27979H304.249V9.11978H274.089V50.6398H304.249V58.4798ZM302.729 33.3598H273.289V25.5198H302.729V33.3598Z"
+                                fill="url(#paint4_linear_48_3)" />
+                            <path
+                                d="M249.685 42.8L255.845 48.96C253.338 52.2667 250.058 54.9067 246.005 56.88C242.005 58.8 237.578 59.76 232.725 59.76C228.405 59.76 224.432 59.0133 220.805 57.52C217.232 56.0267 214.112 53.9467 211.445 51.28C208.832 48.6133 206.778 45.4667 205.285 41.84C203.845 38.16 203.125 34.1867 203.125 29.92C203.125 25.6 203.872 21.6267 205.365 18C206.858 14.32 208.938 11.1467 211.605 8.48C214.325 5.81333 217.498 3.73333 221.125 2.24C224.752 0.746665 228.698 0 232.965 0C237.818 0 242.218 0.986666 246.165 2.96C250.112 4.88 253.338 7.49333 255.845 10.8L249.685 16.96C247.818 14.24 245.472 12.1067 242.645 10.56C239.818 8.96 236.592 8.16 232.965 8.16C229.125 8.16 225.685 9.12 222.645 11.04C219.605 12.9067 217.205 15.4667 215.445 18.72C213.685 21.9733 212.805 25.7067 212.805 29.92C212.805 34.08 213.685 37.7867 215.445 41.04C217.205 44.2933 219.605 46.88 222.645 48.8C225.685 50.6667 229.125 51.6 232.965 51.6C236.592 51.6 239.818 50.8 242.645 49.2C245.472 47.6 247.818 45.4667 249.685 42.8Z"
+                                fill="url(#paint5_linear_48_3)" />
+                            <path
+                                d="M160.343 58.4798H151.143V34.6398L129.463 1.27979H140.263L156.823 28.0798H154.743L171.383 1.27979H182.023L160.343 34.7198V58.4798Z"
+                                fill="url(#paint6_linear_48_3)" />
+                            <path
+                                d="M107.172 58.4798H97.9724V8.39978H107.172V58.4798ZM125.492 9.19978H79.7324V1.27979H125.492V9.19978Z"
+                                fill="url(#paint7_linear_48_3)" />
+                            <path d="M70.9637 58.4798H61.7637V1.27979H70.9637V58.4798Z"
+                                fill="url(#paint8_linear_48_3)" />
+                            <path
+                                d="M46.56 42.8L52.72 48.96C50.2133 52.2667 46.9333 54.9067 42.88 56.88C38.88 58.8 34.4533 59.76 29.6 59.76C25.28 59.76 21.3067 59.0133 17.68 57.52C14.1067 56.0267 10.9867 53.9467 8.32 51.28C5.70667 48.6133 3.65333 45.4667 2.16 41.84C0.72 38.16 0 34.1867 0 29.92C0 25.6 0.746667 21.6267 2.24 18C3.73333 14.32 5.81333 11.1467 8.48 8.48C11.2 5.81333 14.3733 3.73333 18 2.24C21.6267 0.746665 25.5733 0 29.84 0C34.6933 0 39.0933 0.986666 43.04 2.96C46.9867 4.88 50.2133 7.49333 52.72 10.8L46.56 16.96C44.6933 14.24 42.3467 12.1067 39.52 10.56C36.6933 8.96 33.4667 8.16 29.84 8.16C26 8.16 22.56 9.12 19.52 11.04C16.48 12.9067 14.08 15.4667 12.32 18.72C10.56 21.9733 9.68 25.7067 9.68 29.92C9.68 34.08 10.56 37.7867 12.32 41.04C14.08 44.2933 16.48 46.88 19.52 48.8C22.56 50.6667 26 51.6 29.84 51.6C33.4667 51.6 36.6933 50.8 39.52 49.2C42.3467 47.6 44.6933 45.4667 46.56 42.8Z"
+                                fill="url(#paint9_linear_48_3)" />
+                            <defs>
+                                <linearGradient id="paint0_linear_48_3" x1="367.34" y1="-40.4091" x2="367.34"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_48_3" x1="367.34" y1="-40.4091" x2="367.34"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_48_3" x1="367.341" y1="-40.4091" x2="367.341"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint3_linear_48_3" x1="367.34" y1="-40.4091" x2="367.34"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint4_linear_48_3" x1="367.34" y1="-40.4091" x2="367.34"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint5_linear_48_3" x1="367.34" y1="-40.4089" x2="367.34"
+                                    y2="83.5911" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint6_linear_48_3" x1="367.339" y1="-40.4091" x2="367.339"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint7_linear_48_3" x1="367.341" y1="-40.4091" x2="367.341"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint8_linear_48_3" x1="367.34" y1="-40.4091" x2="367.34"
+                                    y2="83.5909" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                                <linearGradient id="paint9_linear_48_3" x1="367.34" y1="-40.4089" x2="367.34"
+                                    y2="83.5911" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#222222" />
+                                    <stop offset="1" stop-color="#6D6D6D" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <a href="/" class="advantages__link button uppercase">
+                        <p>Подробнее о нас</p>
+                    </a>
+                </div>
+                <div class="advantages__right__text">
+                    <p>Строительство пространства с нуля или реновация устаревшего требует детального,
+                        ответственного
+                        подхода. Одним из ключевых факторов успешной реализации проекта, является правильный выбор
+                        генерального подрядчика.
+                    </p>
+                    <p>Генеральный подрядчик — это не просто исполнитель работ, а один из ключевых участников
+                        проекта по
+                        строительству. Важно, чтобы команда включалась в проект уже на этапе планирования и
+                        постановки
+                        задач по проекту.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <div class="container">
+                <ul class="achievements__list">
+                    <li class="achievements__item">
+                        <div class="achievements__count">
+                            <p><span>4+</span></p>
+                        </div>
+                        <div class="achievements__description">
+                            <p><span>лет опыта</span></p>
+                            <p>в проектировании и строительстве</p>
+                        </div>
+                    </li>
+                    <li class="achievements__item">
+                        <div class="achievements__count">
+                            <p><span>100+</span></p>
+                        </div>
+                        <div class="achievements__description">
+                            <p><span>реализованных проектов</span></p>
+                            <p>от квартир до коммерческих объектов</p>
+                        </div>
+                    </li>
+                    <li class="achievements__item">
+                        <div class="achievements__count">
+                            <p><span>50+</span></p>
+                        </div>
+                        <div class="achievements__description">
+                            <p><span>специалистов в команде</span></p>
+                            <p>архитекторы, инженеры и строители</p>
+                        </div>
+                    </li>
+                    <li class="achievements__item">
+                        <div class="achievements__count">
+                            <p><span>100%</span></p>
+                        </div>
+                        <div class="achievements__description">
+                            <p><span>соблюдение сроков</span></p>
+                            <p>фиксируем в договоре</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="holding">
+            <div class="container">
+                <div class="holding__img">
+                    <img src="./imgs/holding.png" alt="" loading="lazy">
+                </div>
+                <div class="holding__info">
+                    <p><strong>Наша компания входит в многопрофильный холдинг полного цикла и объединяет <br> «Сити
+                            Центр
+                            Девелопмент», «Строительный Трест-12» и Business Club.
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <div class="partners__breadcrumbs uppercase">
+                    <p>Наши партнеры</p>
+                </div>
+                <ul class="partners__list">
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerFirst.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerSecond.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerThirth.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerFourth.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerFifth.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerSixth.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                    <li class="partners__item">
+                        <div class="partners__item__img">
+                            <img src="./icons/partnerSeventh.svg" alt="" loading="lazy">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="headmaster">
+            <div class="container">
+                <div class="headmaster__img">
+                    <img src="./imgs/headMasterPreview.png" alt="" loading="lazy">
+                    <div class="headmaster__info">
+                        <div class="headmaster__title uppercase">
+                            <p>Андрей фабрикант</p>
+                        </div>
+                        <div class="headmaster__post uppercase">
+                            <p>Управляющий директор</p>
+                        </div>
+                        <div class="headmster__notice">
+                            <p>Для нас важно создать долгосрочные отношения, благодаря безупречному качеству и
+                                прозрачности всех процессов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container">
+                <div class="news__breadcrumbs uppercase">
+                    <p>Последние новости</p>
+                </div>
+                <ul class="news__list">
+                    <li class="news__item">
+                        <a href="/" target="_blank" rel="noopener noreferrer">
+                            <div class="news__item__img">
+                                <img src="./imgs/newsFirst.png" alt="" loading="lazy">
+                                <div class="news__item__date">
+                                    <p>15 сентября</p>
+                                </div>
+                            </div>
+                            <div class="news__item__title">
+                                <h3>Какие офисы нужны современному бизнесу?</h3>
+                            </div>
+                            <div class="news__item__description">
+                                <p>Исследование позволило выделить ключевые тренды в обустройстве актуальных рабочих
+                                    пространств.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="news__item">
+                        <a href="/" target="_blank" rel="noopener noreferrer">
+                            <div class="news__item__img">
+                                <img src="./imgs/newsSecond.png" alt="" loading="lazy">
+                                <div class="news__item__date">
+                                    <p>6 сентября</p>
+                                </div>
+                            </div>
+                            <div class="news__item__title">
+                                <h3>Какие офисы нужны современному бизнесу?</h3>
+                            </div>
+                            <div class="news__item__description">
+                                <p>Исследование позволило выделить ключевые тренды в обустройстве актуальных рабочих
+                                    пространств.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="news__item">
+                        <a href="/" target="_blank" rel="noopener noreferrer">
+                            <div class="news__item__img">
+                                <img src="./imgs/newsThirth.png" alt="" loading="lazy">
+                                <div class="news__item__date">
+                                    <p>28 августа</p>
+                                </div>
+                            </div>
+                            <div class="news__item__title">
+                                <h3>Какие офисы нужны современному бизнесу?</h3>
+                            </div>
+                            <div class="news__item__description">
+                                <p>Исследование позволило выделить ключевые тренды в обустройстве актуальных рабочих
+                                    пространств.</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <a href="/" class="button news__link uppercase" target="_blank" rel="noopener noreferrer">
+                    <p>Все новости</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="approach">
+            <div class="container">
+                <div class="approach__inner">
+                    <div class="approach__title title">
+                        <h2>Мы знаем, как осуществить Вашу мечту</h2>
+                    </div>
+                    <div class="approach__info">
+                        <p>Мы создаём проекты, которые отражают ваш характер и образ жизни. От идеи до финальной отделки
+                            —
+                            каждый шаг направлен на то, чтобы мечта стала реальностью</p>
+                    </div>
+                    <a href="/" class="approach__link button uppercase" target="_blank" rel="noopener noreferrer">
+                        <p>Портфолио</p>
+                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.6958 0.300018C8.01337 -0.0642391 8.56613 -0.102098 8.93037 0.215457L14.2834 4.88215C14.4739 5.04828 14.5833 5.28885 14.5833 5.54166C14.5833 5.7946 14.4739 6.03505 14.2834 6.20118L8.93037 10.8678C8.56613 11.1854 8.01337 11.1476 7.6958 10.7834C7.37823 10.419 7.41615 9.86638 7.78038 9.54881L11.3731 6.41666L0.875 6.41666C0.391755 6.41666 0 6.0249 0 5.54166C0 5.05843 0.391755 4.66666 0.875 4.66666L11.3731 4.66666L7.78038 1.53456C7.41615 1.21701 7.37823 0.664274 7.6958 0.300018Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+                <ul class="approach__list">
+                    <li class="approach__item">
+                        <img src="./imgs/approachFirst.png" alt="" loading="lazy">
+                    </li>
+                    <li class="approach__item">
+                        <img src="./imgs/approachSecond.png" alt="" loading="lazy">
+                    </li>
+                    <li class="approach__item">
+                        <img src="./imgs/approachThirth.png" alt="" loading="lazy">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="question">
+            <div class="container">
+                <div class="question__title title">
+                    <h2>Ваш проект начинается с вопроса — задайте его нам</h2>
+                </div>
+                <form action="#" class="question__form">
+                    <div class="question__form__inner">
+                        <div class="question__items">
+                            <div class="question__input">
+                                <input type="text" name="name" required placeholder="Ваше имя">
+                            </div>
+                            <div class="question__input">
+                                <input type="tel" name="tel" required placeholder="+ 7 (999) 999 - 99 - 99">
+                            </div>
+                        </div>
+                        <button type="submit" class="question__button button uppercase">
+                            <span>Обсудить проект</span>
+                        </button>
+                    </div>
+                    <div class="form__privacy">
+                        <p>Оставляя заявку, вы соглашаетесь на обработку персональных данных в соответствии с
+                            <a href="/" target="_blank" rel="noopener noreferrer">политикой
+                                конфиденциальности
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__left__inner">
+                    <ul class="footer__contacts">
+                        <li><a href="tel:+74952217772">+7 (495) 221 7772</a></li>
+                        <li><a href="mailto:info@citym3.ru">info@citym3.ru</a></li>
+                        <li>
+                            <a href="https://yandex.ru/maps/213/moscow/house/presnenskaya_naberezhnaya_12/Z04YcwRnTUYDQFtvfXt1eHpgZw==/?ll=37.537434%2C55.749633&z=17"
+                                target="_blank" rel="noopener noreferrer">г.
+                                Москва, Пресненская наб., 12 МФК "Башня Федерация"</a>
+                        </li>
+                    </ul>
+                    <ul class="footer__socials">
+                        <li>
+                            <a href="/" title="Переход в телеграм" target="_blank" rel="noopener noreferrer">
+                                <svg width="25" height="21" viewBox="0 0 25 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M24.9202 1.8997L21.1327 19.6309C20.8502 20.8797 20.1252 21.1609 19.0777 20.5972L13.3964 16.4072L10.6152 19.066C10.3339 19.3484 10.0514 19.6309 9.40645 19.6309L9.8502 13.7872L20.4477 4.1572C20.8902 3.71345 20.3264 3.5522 19.7627 3.91595L6.58645 12.216L0.903946 10.4834C-0.344804 10.0809 -0.344804 9.23345 1.18645 8.67095L23.2677 0.0872003C24.3552 -0.2353 25.2827 0.3297 24.9202 1.8997Z"
+                                        fill="#9F9F9F" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" title="Переход в ватсап" target="_blank" rel="noopener noreferrer">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.5 0C19.4038 0 25 5.59625 25 12.5C25 19.4037 19.4038 25 12.5 25C10.291 25.0038 8.12075 24.4192 6.21252 23.3063L0.00501932 25L1.69502 18.79C0.581217 16.8812 -0.00385203 14.71 1.90859e-05 12.5C1.90859e-05 5.59625 5.59627 0 12.5 0ZM8.24002 6.625L7.99002 6.635C7.82838 6.64614 7.67045 6.68859 7.52502 6.76C7.38949 6.83689 7.26572 6.93287 7.15752 7.045C7.00752 7.18625 6.92252 7.30875 6.83127 7.4275C6.36892 8.02863 6.11999 8.76664 6.12377 9.525C6.12627 10.1375 6.28627 10.7338 6.53627 11.2913C7.04752 12.4187 7.88877 13.6125 8.99877 14.7188C9.26627 14.985 9.52877 15.2525 9.81127 15.5013C11.1906 16.7155 12.8341 17.5912 14.6113 18.0588L15.3213 18.1675C15.5525 18.18 15.7838 18.1625 16.0163 18.1512C16.3803 18.1321 16.7356 18.0335 17.0575 17.8625C17.2211 17.7779 17.3808 17.6862 17.5363 17.5875C17.5363 17.5875 17.5892 17.5517 17.6925 17.475C17.8613 17.35 17.965 17.2612 18.105 17.115C18.21 17.0067 18.2975 16.8808 18.3675 16.7375C18.465 16.5338 18.5625 16.145 18.6025 15.8212C18.6325 15.5737 18.6238 15.4388 18.62 15.355C18.615 15.2213 18.5038 15.0825 18.3825 15.0238L17.655 14.6975C17.655 14.6975 16.5675 14.2238 15.9025 13.9213C15.8329 13.8909 15.7584 13.8736 15.6825 13.87C15.597 13.8611 15.5105 13.8706 15.429 13.898C15.3475 13.9254 15.2728 13.97 15.21 14.0287C15.2038 14.0262 15.12 14.0975 14.2163 15.1925C14.1644 15.2622 14.0929 15.3149 14.011 15.3438C13.9291 15.3728 13.8404 15.3767 13.7563 15.355C13.6748 15.3333 13.595 15.3057 13.5175 15.2725C13.3625 15.2075 13.3088 15.1825 13.2025 15.1375C12.4849 14.8249 11.8206 14.4018 11.2338 13.8838C11.0763 13.7463 10.93 13.5962 10.78 13.4513C10.2883 12.9803 9.85971 12.4475 9.50502 11.8663L9.43127 11.7475C9.3791 11.6672 9.33632 11.5813 9.30377 11.4913C9.25627 11.3075 9.38002 11.16 9.38002 11.16C9.38002 11.16 9.68377 10.8275 9.82502 10.6475C9.96252 10.4725 10.0788 10.3025 10.1538 10.1813C10.3013 9.94375 10.3475 9.7 10.27 9.51125C9.92002 8.65625 9.55835 7.80583 9.18502 6.96C9.11127 6.7925 8.89252 6.6725 8.69377 6.64875C8.62627 6.64042 8.55877 6.63375 8.49127 6.62875C8.32343 6.61912 8.15513 6.62079 7.98752 6.63375L8.24002 6.625Z"
+                                        fill="#9F9F9F" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" title="Переход в ютуб" target="_blank" rel="noopener noreferrer">
+                                <svg width="25" height="18" viewBox="0 0 25 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10 12.5L16.4875 8.75L10 5V12.5ZM24.45 2.7125C24.6125 3.3 24.725 4.0875 24.8 5.0875C24.8875 6.0875 24.925 6.95 24.925 7.7L25 8.75C25 11.4875 24.8 13.5 24.45 14.7875C24.1375 15.9125 23.4125 16.6375 22.2875 16.95C21.7 17.1125 20.625 17.225 18.975 17.3C17.35 17.3875 15.8625 17.425 14.4875 17.425L12.5 17.5C7.2625 17.5 4 17.3 2.7125 16.95C1.5875 16.6375 0.8625 15.9125 0.55 14.7875C0.3875 14.2 0.275 13.4125 0.2 12.4125C0.1125 11.4125 0.0749999 10.55 0.0749999 9.8L0 8.75C0 6.0125 0.2 4 0.55 2.7125C0.8625 1.5875 1.5875 0.8625 2.7125 0.55C3.3 0.3875 4.375 0.275 6.025 0.2C7.65 0.1125 9.1375 0.0749999 10.5125 0.0749999L12.5 0C17.7375 0 21 0.2 22.2875 0.55C23.4125 0.8625 24.1375 1.5875 24.45 2.7125Z"
+                                        fill="#9F9F9F" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__right__inner">
+                    <div class="footer__right__inner__item">
+                        <h3>Наши услуги</h3>
+                        <ul class="footer__services">
+                            <li class="footer__service uppercase">
+                                <a href="/">Дизайн и проектирование</a>
+                            </li>
+                            <li class="footer__service uppercase">
+                                <a href="/">Инженерные системы</a>
+                            </li>
+                            <li class="footer__service uppercase">
+                                <a href="/">Строительно-монтажные работы</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__right__inner__item">
+                        <h3>О компании</h3>
+                        <nav class="footer__right__nav">
+                            <ul class="footer__right__list">
+                                <li class="footer__right__item uppercase">
+                                    <a href="/">Портфолио</a>
+                                </li>
+                                <li class="footer__right__item uppercase">
+                                    <a href="/">Новости</a>
+                                </li>
+                                <li class="footer__right__item uppercase">
+                                    <a href="/">Отзывы</a>
+                                </li>
+                                <li class="footer__right__item uppercase">
+                                    <a href="/">О нас</a>
+                                </li>
+                                <li class="footer__right__item uppercase">
+                                    <a href="/">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__rights">
+                    <p>© CITY CENTER 2025. All Rights reserved</p>
+                </div>
+                <div class="footer__legal">
+                    <div class="footer__privacy">
+                        <a href="/" target="_blank" rel="noopener noreferrer">Политика конфеденциальности</a>
+                    </div>
+                    <div class="footer__information">
+                        <a href="/" target="_blank" rel="noopener noreferrer">Юридическая информация</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
