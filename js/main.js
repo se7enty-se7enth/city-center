@@ -88,3 +88,18 @@ const taskSwiper = new Swiper(".task-slider", {
     prevEl: ".task-slider-prev",
   },
 });
+
+const partnersSwiper = new Swiper(".partners-slider", {
+  loop: true,
+  slidesPerView: 6,
+  spaceBetween: 30,
+  freeMode: true,
+  freeModeMomentum: false,
+  speed: 1200,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  grabCursor: false,
+  centeredSlides: false,
+});
