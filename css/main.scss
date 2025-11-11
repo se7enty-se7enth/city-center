@@ -271,7 +271,7 @@ noscript {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
+    z-index: 1;
     overflow: hidden;
 
     .swiper-slide {
@@ -282,29 +282,33 @@ noscript {
 
     .swiper-slide:nth-child(1) {
         background-image: url('../imgs/MainBkg.png');
+        filter: brightness(0.5);
     }
 
     .swiper-slide:nth-child(2) {
         background-image: url('../imgs/MainBkg.png');
+        filter: brightness(0.5);
     }
 
     .swiper-slide:nth-child(3) {
         background-image: url('../imgs/MainBkg.png');
+        filter: brightness(0.5);
     }
 
     .swiper-slide:nth-child(4) {
         background-image: url('../imgs/MainBkg.png');
+        filter: brightness(0.5);
     }
 }
 
 .swiper-slider-progress {
     position: absolute;
-    bottom: -130px;
+    z-index: 2;
+    bottom: -120px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
-    z-index: 19;
 }
 
 .progress-bar {
@@ -316,14 +320,15 @@ noscript {
 
 .hero {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     background: transparent;
     margin-top: 104px;
     padding-top: 115px;
 
-    &__container {
+    .container {
         position: relative;
         z-index: 2;
+        padding-bottom: 75px;
     }
 
     &__title {
@@ -338,7 +343,7 @@ noscript {
         color: #E5E5E5;
     }
 
-    &__portfolio__link {
+    .hero__portfolio__link {
         margin: 55px 0 235px;
 
         &::before {
@@ -349,16 +354,24 @@ noscript {
             height: 100%;
             width: 0;
             background: var(--color-light);
-            transition: all 0.5s ease;
+            transition: width 0.5s ease;
             z-index: 0;
             border-radius: inherit;
         }
 
-        p,
+        p {
+            position: relative;
+            z-index: 1;
+            transition: color 0.5s ease;
+        }
+
         svg {
             position: relative;
             z-index: 1;
-            transition: all 0.5s ease;
+
+            path {
+                transition: fill 0.5s ease;
+            }
         }
 
         &:hover::before {
@@ -370,7 +383,6 @@ noscript {
 
             svg path {
                 fill: var(--color-dark);
-                transition: all 0.5s ease;
             }
         }
     }
@@ -463,6 +475,8 @@ noscript {
 .company__services {
     padding-block: 150px;
     background-color: #F0F0F0;
+    position: relative;
+    z-index: 3;
 
     .company__breadcrumbs {
         font-size: 14px;
@@ -509,14 +523,14 @@ noscript {
                 height: 100%;
                 width: 0;
                 background: var(--color-light);
-                transition: all 0.5s ease;
+                transition: width 0.5s ease;
                 border-radius: inherit;
             }
 
             p {
                 position: relative;
                 z-index: 1;
-                transition: all 0.5s ease;
+                transition: color 0.5s ease;
                 margin: 0 auto;
             }
 
@@ -672,14 +686,14 @@ noscript {
                 height: 100%;
                 width: 0;
                 background: var(--color-light);
-                transition: all 0.5s ease;
+                transition: width 0.5s ease;
                 border-radius: inherit;
             }
 
             p {
                 position: relative;
                 z-index: 1;
-                transition: all 0.5s ease;
+                transition: color 0.5s ease;
                 margin: 0 auto;
             }
 
@@ -756,14 +770,14 @@ noscript {
                 height: 100%;
                 width: 0;
                 background: var(--color-light);
-                transition: all 0.5s ease;
+                transition: width 0.5s ease;
                 border-radius: inherit;
             }
 
             p {
                 position: relative;
                 z-index: 1;
-                transition: all 0.5s ease;
+                transition: color 0.5s ease;
                 margin: 0 auto;
             }
 
@@ -818,7 +832,7 @@ noscript {
             height: 100%;
             width: 0;
             background: #222222;
-            transition: all 0.5s ease;
+            transition: width 0.5s ease;
             z-index: 0;
             border-radius: inherit;
         }
@@ -826,7 +840,7 @@ noscript {
         p {
             position: relative;
             z-index: 1;
-            transition: all 0.5s ease;
+            transition: color 0.5s ease;
             margin: 0 auto;
         }
 
@@ -1130,7 +1144,7 @@ noscript {
             height: 100%;
             width: 0;
             background: #222222;
-            transition: all 0.5s ease;
+            transition: width 0.5s ease;
             z-index: 0;
             border-radius: inherit;
         }
@@ -1138,7 +1152,7 @@ noscript {
         p {
             position: relative;
             z-index: 1;
-            transition: all 0.5s ease;
+            transition: color 0.5s ease;
         }
 
         &:hover::before {
@@ -1190,24 +1204,29 @@ noscript {
                 height: 100%;
                 width: 0;
                 background: #222222;
-                transition: all 0.5s ease;
+                transition: width 0.5s ease;
                 z-index: 0;
                 border-radius: inherit;
             }
 
-            p,
-            svg {
+            p {
                 position: relative;
                 z-index: 1;
-                transition: all 0.5s ease;
+                transition: color 0.5s ease;
             }
 
             &:hover::before {
                 width: 100%;
             }
 
-            svg path {
-                fill: var(--color-dark);
+            svg {
+                position: relative;
+                z-index: 1;
+
+                path {
+                    transition: fill 0.5s ease;
+                    fill: var(--color-dark);
+                }
             }
 
             &:hover {
@@ -1216,7 +1235,6 @@ noscript {
 
                 svg path {
                     fill: var(--color-light);
-                    transition: all 0.5s ease;
                 }
             }
         }

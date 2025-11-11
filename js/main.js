@@ -1,3 +1,6 @@
+// Регистрируем плагин ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
 /* ===== ХЕДЕР — смена фона при скролле ===== */
 const header = document.querySelector(".header");
 
@@ -103,3 +106,120 @@ const partnersSwiper = new Swiper(".partners-slider", {
   grabCursor: false,
   centeredSlides: false,
 });
+
+/* ===== GSAP ===== */
+if (document.body.classList.contains("index")) {
+  gsap.from(".hero__title h1", {
+    duration: 1.2,
+    y: -50,
+    opacity: 0,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  gsap.from(".header", {
+    duration: 1.2,
+    y: -50,
+    opacity: 0,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  gsap.from(".hero__description", {
+    duration: 1.2,
+    y: -15,
+    opacity: 0,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  gsap.from(".hero__video__title", {
+    duration: 1.5,
+    y: 80,
+    opacity: 0,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  gsap.from(".hero__video__img", {
+    duration: 1.2,
+    y: 30,
+    opacity: 0,
+    delay: 0.3,
+    ease: "power3.out",
+  });
+
+  gsap.fromTo(
+    ".hero__portfolio__link",
+    {
+      y: 100,
+      opacity: 0,
+      transition: "none",
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      delay: 0.3,
+      ease: "power3.out",
+      clearProps: "all",
+    }
+  );
+
+  gsap.fromTo(
+    ".swiper-pagination, .hero-slider-prev, .hero-slider-next",
+    {
+      y: 30,
+      opacity: 0,
+      transition: "none",
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1.2,
+      delay: 0.3,
+      ease: "power3.out",
+      clearProps: "all",
+    }
+  );
+
+  /* ===== GSAP PARALAX HERO ===== */
+  if (document.body.classList.contains("index")) {
+    gsap.to(".hero-slider", {
+      y: "15vh",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".main-index",
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+      },
+    });
+  }
+
+  /* ===== GSAP COMPANY ITEM ===== */
+  if (document.body.classList.contains("index")) {
+    gsap.set(".company__list", { gap: 0 });
+
+    const companyTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".company__list",
+        start: "top bottom-=150",
+        once: true,
+      },
+    });
+
+    companyTl.from(".company__item", {
+      duration: 3,
+      x: 200,
+      opacity: 0,
+      ease: "power3.out",
+    });
+
+    companyTl.to(".company__list", {
+      gap: "20px",
+      duration: 0.5,
+      ease: "power3.out",
+    });
+  }
+}

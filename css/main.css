@@ -494,7 +494,7 @@ noscript {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
 }
 .hero-slider .swiper-slide {
@@ -504,25 +504,29 @@ noscript {
 }
 .hero-slider .swiper-slide:nth-child(1) {
   background-image: url("../imgs/MainBkg.png");
+  filter: brightness(0.5);
 }
 .hero-slider .swiper-slide:nth-child(2) {
   background-image: url("../imgs/MainBkg.png");
+  filter: brightness(0.5);
 }
 .hero-slider .swiper-slide:nth-child(3) {
   background-image: url("../imgs/MainBkg.png");
+  filter: brightness(0.5);
 }
 .hero-slider .swiper-slide:nth-child(4) {
   background-image: url("../imgs/MainBkg.png");
+  filter: brightness(0.5);
 }
 
 .swiper-slider-progress {
   position: absolute;
-  bottom: -130px;
+  z-index: 2;
+  bottom: -120px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
-  z-index: 19;
 }
 
 .progress-bar {
@@ -534,14 +538,15 @@ noscript {
 
 .hero {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   background: transparent;
   margin-top: 104px;
   padding-top: 115px;
 }
-.hero__container {
+.hero .container {
   position: relative;
   z-index: 2;
+  padding-bottom: 75px;
 }
 .hero__title {
   max-width: 810px;
@@ -552,10 +557,10 @@ noscript {
 .hero__description {
   color: #E5E5E5;
 }
-.hero__portfolio__link {
+.hero .hero__portfolio__link {
   margin: 55px 0 235px;
 }
-.hero__portfolio__link::before {
+.hero .hero__portfolio__link::before {
   content: "";
   position: absolute;
   top: 0;
@@ -563,25 +568,30 @@ noscript {
   height: 100%;
   width: 0;
   background: var(--color-light);
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   z-index: 0;
   border-radius: inherit;
 }
-.hero__portfolio__link p,
-.hero__portfolio__link svg {
+.hero .hero__portfolio__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
 }
-.hero__portfolio__link:hover::before {
+.hero .hero__portfolio__link svg {
+  position: relative;
+  z-index: 1;
+}
+.hero .hero__portfolio__link svg path {
+  transition: fill 0.5s ease;
+}
+.hero .hero__portfolio__link:hover::before {
   width: 100%;
 }
-.hero__portfolio__link:hover {
+.hero .hero__portfolio__link:hover {
   color: var(--color-dark);
 }
-.hero__portfolio__link:hover svg path {
+.hero .hero__portfolio__link:hover svg path {
   fill: var(--color-dark);
-  transition: all 0.5s ease;
 }
 .hero__bottom {
   position: relative;
@@ -662,6 +672,8 @@ noscript {
 .company__services {
   padding-block: 150px;
   background-color: #F0F0F0;
+  position: relative;
+  z-index: 3;
 }
 .company__services .company__breadcrumbs {
   font-size: 14px;
@@ -709,13 +721,13 @@ noscript {
   height: 100%;
   width: 0;
   background: var(--color-light);
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   border-radius: inherit;
 }
 .company__services .company__title .company__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   margin: 0 auto;
 }
 .company__services .company__title .company__link:hover::before {
@@ -863,13 +875,13 @@ noscript {
   height: 100%;
   width: 0;
   background: var(--color-light);
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   border-radius: inherit;
 }
 .projects__list .project__item__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   margin: 0 auto;
 }
 .projects__list .project__item__link:hover::before {
@@ -943,13 +955,13 @@ noscript {
   height: 100%;
   width: 0;
   background: var(--color-light);
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   border-radius: inherit;
 }
 .perfomances .container .perfomances__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   margin: 0 auto;
 }
 .perfomances .container .perfomances__link:hover::before {
@@ -1000,14 +1012,14 @@ noscript {
   height: 100%;
   width: 0;
   background: #222222;
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   z-index: 0;
   border-radius: inherit;
 }
 .advantages__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   margin: 0 auto;
 }
 .advantages__link:hover::before {
@@ -1292,14 +1304,14 @@ noscript {
   height: 100%;
   width: 0;
   background: #222222;
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   z-index: 0;
   border-radius: inherit;
 }
 .news__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
 }
 .news__link:hover::before {
   width: 100%;
@@ -1347,20 +1359,24 @@ noscript {
   height: 100%;
   width: 0;
   background: #222222;
-  transition: all 0.5s ease;
+  transition: width 0.5s ease;
   z-index: 0;
   border-radius: inherit;
 }
-.approach .approach__inner .approach__link p,
-.approach .approach__inner .approach__link svg {
+.approach .approach__inner .approach__link p {
   position: relative;
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
 }
 .approach .approach__inner .approach__link:hover::before {
   width: 100%;
 }
+.approach .approach__inner .approach__link svg {
+  position: relative;
+  z-index: 1;
+}
 .approach .approach__inner .approach__link svg path {
+  transition: fill 0.5s ease;
   fill: var(--color-dark);
 }
 .approach .approach__inner .approach__link:hover {
@@ -1368,7 +1384,6 @@ noscript {
 }
 .approach .approach__inner .approach__link:hover svg path {
   fill: var(--color-light);
-  transition: all 0.5s ease;
 }
 .approach .approach__list {
   display: flex;
