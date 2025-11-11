@@ -199,7 +199,7 @@ if (document.body.classList.contains("index")) {
 
   /* ===== GSAP COMPANY ITEM ===== */
   if (document.body.classList.contains("index")) {
-    gsap.set(".company__list", { gap: 0 });
+    gsap.set(".company__list", { gap: 0, columnGap: 0 });
 
     const companyTl = gsap.timeline({
       scrollTrigger: {
@@ -210,16 +210,20 @@ if (document.body.classList.contains("index")) {
     });
 
     companyTl.from(".company__item", {
-      duration: 3,
-      x: 200,
+      duration: 2.5,
+      x: 250,
       opacity: 0,
       ease: "power3.out",
     });
 
-    companyTl.to(".company__list", {
-      gap: "20px",
-      duration: 0.5,
-      ease: "power3.out",
-    });
+    companyTl.to(
+      ".company__list",
+      {
+        columnGap: "20px",
+        duration: 2.5,
+        ease: "power3.out",
+      },
+      "-=2"
+    );
   }
 }
