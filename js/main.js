@@ -107,9 +107,6 @@ const partnersSwiper = new Swiper(".partners-slider", {
   centeredSlides: false,
 });
 
-// --- ВОТ РЕШЕНИЕ ---
-// Мы говорим: "Запусти весь GSAP-код ТОЛЬКО ПОСЛЕ полной загрузки страницы"
-// Это гарантирует, что CSS (align-items: center) уже отработал.
 window.addEventListener("load", () => {
   /* ===== GSAP ===== */
   if (document.body.classList.contains("index")) {
@@ -227,19 +224,34 @@ window.addEventListener("load", () => {
       "-=2"
     );
 
+    /* ===== GSAP ПАРАЛЛАКС-ПЕРЕХОД (COMPANY -> PROJECTS) ===== */
+    gsap.to(".company__services", {
+      y: "50vh",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".company__services",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+    // <--- КОНЕЦ НОВОГО БЛОКА ---
+
     /* ===== GSAP PROJECTS SECTION ===== */
-    // Этот код теперь будет работать ПОСЛЕ того,
-    // как CSS отцентрирует контент
     const projectItems = gsap.utils.toArray(".project__item");
 
     projectItems.forEach((item) => {
-      gsap.to(
+      gsap.fromTo(
         [
           item.querySelector(".project__item__inner"),
           item.querySelector(".project__item__right__img"),
         ],
         {
-          y: "-40vh", // "Ощущение скролла"
+          y: 0,
+        },
+        {
+          y: "-40vh",
+
           ease: "none",
           scrollTrigger: {
             trigger: item,
@@ -250,5 +262,5 @@ window.addEventListener("load", () => {
         }
       );
     });
-  } // <--- конец if (document.body.classList.contains("index"))
-}); // <--- ВОТ ЗАКРЫВАЮЩАЯ СКОБКА "load"
+  }
+});
