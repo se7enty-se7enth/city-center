@@ -107,84 +107,87 @@ const partnersSwiper = new Swiper(".partners-slider", {
   centeredSlides: false,
 });
 
-/* ===== GSAP ===== */
-if (document.body.classList.contains("index")) {
-  gsap.from(".hero__title h1", {
-    duration: 1.2,
-    y: -50,
-    opacity: 0,
-    delay: 0.3,
-    ease: "power3.out",
-  });
-
-  gsap.from(".header", {
-    duration: 1.2,
-    y: -50,
-    opacity: 0,
-    delay: 0.3,
-    ease: "power3.out",
-  });
-
-  gsap.from(".hero__description", {
-    duration: 1.2,
-    y: -15,
-    opacity: 0,
-    delay: 0.3,
-    ease: "power3.out",
-  });
-
-  gsap.from(".hero__video__title", {
-    duration: 1.5,
-    y: 80,
-    opacity: 0,
-    delay: 0.3,
-    ease: "power3.out",
-  });
-
-  gsap.from(".hero__video__img", {
-    duration: 1.2,
-    y: 30,
-    opacity: 0,
-    delay: 0.3,
-    ease: "power3.out",
-  });
-
-  gsap.fromTo(
-    ".hero__portfolio__link",
-    {
-      y: 100,
-      opacity: 0,
-      transition: "none",
-    },
-    {
-      y: 0,
-      opacity: 1,
+// --- ВОТ РЕШЕНИЕ ---
+// Мы говорим: "Запусти весь GSAP-код ТОЛЬКО ПОСЛЕ полной загрузки страницы"
+// Это гарантирует, что CSS (align-items: center) уже отработал.
+window.addEventListener("load", () => {
+  /* ===== GSAP ===== */
+  if (document.body.classList.contains("index")) {
+    gsap.from(".hero__title h1", {
       duration: 1.2,
+      y: -50,
+      opacity: 0,
       delay: 0.3,
       ease: "power3.out",
-      clearProps: "all",
-    }
-  );
+    });
 
-  gsap.fromTo(
-    ".swiper-pagination, .hero-slider-prev, .hero-slider-next",
-    {
+    gsap.from(".header", {
+      duration: 1.2,
+      y: -50,
+      opacity: 0,
+      delay: 0.3,
+      ease: "power3.out",
+    });
+
+    gsap.from(".hero__description", {
+      duration: 1.2,
+      y: -15,
+      opacity: 0,
+      delay: 0.3,
+      ease: "power3.out",
+    });
+
+    gsap.from(".hero__video__title", {
+      duration: 1.5,
+      y: 80,
+      opacity: 0,
+      delay: 0.3,
+      ease: "power3.out",
+    });
+
+    gsap.from(".hero__video__img", {
+      duration: 1.2,
       y: 30,
       opacity: 0,
-      transition: "none",
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
       delay: 0.3,
       ease: "power3.out",
-      clearProps: "all",
-    }
-  );
+    });
 
-  /* ===== GSAP PARALAX HERO ===== */
-  if (document.body.classList.contains("index")) {
+    gsap.fromTo(
+      ".hero__portfolio__link",
+      {
+        y: 100,
+        opacity: 0,
+        transition: "none",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        clearProps: "all",
+      }
+    );
+
+    gsap.fromTo(
+      ".swiper-pagination, .hero-slider-prev, .hero-slider-next",
+      {
+        y: 30,
+        opacity: 0,
+        transition: "none",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        clearProps: "all",
+      }
+    );
+
+    /* ===== GSAP PARALAX HERO ===== */
     gsap.to(".hero-slider", {
       y: "15vh",
       ease: "none",
@@ -195,10 +198,8 @@ if (document.body.classList.contains("index")) {
         scrub: true,
       },
     });
-  }
 
-  /* ===== GSAP COMPANY ITEM ===== */
-  if (document.body.classList.contains("index")) {
+    /* ===== GSAP COMPANY ITEM ===== */
     gsap.set(".company__list", { gap: 0, columnGap: 0 });
 
     const companyTl = gsap.timeline({
@@ -225,5 +226,29 @@ if (document.body.classList.contains("index")) {
       },
       "-=2"
     );
-  }
-}
+
+    /* ===== GSAP PROJECTS SECTION ===== */
+    // Этот код теперь будет работать ПОСЛЕ того,
+    // как CSS отцентрирует контент
+    const projectItems = gsap.utils.toArray(".project__item");
+
+    projectItems.forEach((item) => {
+      gsap.to(
+        [
+          item.querySelector(".project__item__inner"),
+          item.querySelector(".project__item__right__img"),
+        ],
+        {
+          y: "-40vh", // "Ощущение скролла"
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    });
+  } // <--- конец if (document.body.classList.contains("index"))
+}); // <--- ВОТ ЗАКРЫВАЮЩАЯ СКОБКА "load"

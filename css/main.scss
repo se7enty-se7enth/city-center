@@ -622,93 +622,109 @@ noscript {
     }
 }
 
-.projects__list {
-    @include m.flex(column, center, stretch, 0);
+.projects {
+    position: relative;
+    z-index: 4;
+    height: 300vh;
 
-    .project__item {
-        padding-block: 204px;
-        color: var(--color-light);
+    .projects__list {
+        @include m.flex(column, center, stretch, 0);
+        position: relative;
 
-        .container {
-            @include m.flex(row, space-between, center, 25px);
-        }
-
-        &:nth-child(1) {
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../imgs/projectFirstBkg.png');
+        .project__item {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
             background-size: cover;
-            background-position: center;
-        }
+            color: var(--color-light);
+            background-position: center center;
 
-        &:nth-child(2) {
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../imgs/projectSecondBkg.png');
-            background-size: cover;
-            background-position: center;
-        }
-
-        &:nth-child(3) {
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../imgs/projectThirthBkg.png');
-            background-size: cover;
-            background-position: center;
-        }
-
-        &__heading {
-            max-width: 640px;
-            @include m.flex(column, start, stretch, 45px);
-            margin-bottom: 200px;
-        }
-
-        &__title {
-            h2 {
-                text-align: start;
-                font-size: 60px;
-            }
-        }
-
-        &__description {
-            font-weight: 500;
-            font-size: 18px;
-        }
-
-        &__link {
-            max-width: 204px;
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 0;
-                background: var(--color-light);
-                transition: width 0.5s ease;
-                border-radius: inherit;
-            }
-
-            p {
+            .container {
+                @include m.flex(row, space-between, flex-start, 25px);
                 position: relative;
+                z-index: 2;
+                padding-top: 30vh;
+            }
+
+            &:nth-child(1) {
+                background-image:
+                    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('../imgs/projectFirstBkg.png');
+                background-size: cover;
                 z-index: 1;
-                transition: color 0.5s ease;
-                margin: 0 auto;
             }
 
-            &:hover::before {
-                width: 100%;
+            &:nth-child(2) {
+                background-image:
+                    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('../imgs/projectSecondBkg.png');
+                background-size: cover;
+                z-index: 2;
             }
 
-            &:hover {
-                color: var(--color-dark);
+            &:nth-child(3) {
+                background-image:
+                    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url('../imgs/projectThirthBkg.png');
+                background-size: cover;
+                z-index: 3;
             }
-        }
 
-        &__right__img {
-            max-width: 500px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            &__heading {
+                max-width: 640px;
+                @include m.flex(column, start, stretch, 45px);
+                margin-bottom: 200px;
+            }
+
+            &__title {
+                h2 {
+                    text-align: start;
+                    font-size: 60px;
+                }
+            }
+
+            &__description {
+                font-weight: 500;
+                font-size: 18px;
+            }
+
+            &__link {
+                max-width: 204px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 0;
+                    background: var(--color-light);
+                    transition: width 0.5s ease;
+                    border-radius: inherit;
+                }
+
+                p {
+                    position: relative;
+                    z-index: 1;
+                    transition: color 0.5s ease;
+                    margin: 0 auto;
+                }
+
+                &:hover::before {
+                    width: 100%;
+                }
+
+                &:hover {
+                    color: var(--color-dark);
+                }
+            }
+
+            &__right__img {
+                max-width: 500px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+            }
         }
     }
 }
