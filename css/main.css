@@ -914,6 +914,7 @@ noscript {
 .perfomances {
   padding-block: 180px;
   background-color: #F0F0F0;
+  z-index: 1;
 }
 .perfomances .container {
   display: flex;
@@ -925,6 +926,30 @@ noscript {
 .perfomances .container .perfomances__img {
   max-width: 620px;
   aspect-ratio: 1;
+  position: relative;
+  z-index: 2;
+}
+.perfomances .container .perfomances__img::before {
+  position: absolute;
+  content: "";
+  width: 580px;
+  aspect-ratio: 1;
+  background-color: #BFBFBF;
+  top: 20px;
+  left: -20px;
+  z-index: -1;
+  transform: translateX(var(--pseudo-x, 0));
+}
+.perfomances .container .perfomances__img::after {
+  position: absolute;
+  content: "";
+  width: 580px;
+  height: 540px;
+  background-color: #DBDBDB;
+  top: 40px;
+  left: -40px;
+  z-index: -2;
+  transform: translateX(var(--pseudo-x, 0));
 }
 .perfomances .container .perfomances__breadcrumbs {
   color: var(--color-accent);
@@ -989,6 +1014,9 @@ noscript {
 
 .advantages {
   padding: 80px 0 130px;
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
 }
 .advantages .container {
   display: flex;
@@ -1177,6 +1205,7 @@ noscript {
   overflow: hidden;
   padding: 10px 0;
   height: auto;
+  z-index: 0 !important;
 }
 .partners .partners-slider .swiper-wrapper {
   display: flex;
@@ -1190,6 +1219,7 @@ noscript {
 .headmaster {
   padding-block: 180px;
   background-color: #F0F0F0;
+  z-index: 5 !important;
 }
 .headmaster .headmaster__img {
   position: relative;
