@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 ::before,
 ::after {
@@ -279,7 +280,6 @@ noscript {
   max-width: 244px;
   position: relative;
   overflow: hidden;
-  color: #fff;
 }
 
 .title {
@@ -1941,4 +1941,23 @@ noscript {
 
 .portfolio .question {
   background-color: var(--color-light);
+}
+
+/* ================================================= */
+/* ===== НОВЫЙ БЛОК: СТИЛИ ДЛЯ ПРЕЛОАДЕРА ===== */
+/* ================================================= */
+.preloader {
+  position: fixed;
+  inset: 0;
+  /*    * Цвет фона. 
+  * Это то, что будет "раходиться" квадратом.
+  * #222222 - это твой темный цвет, как у хедера при скролле
+  */
+  background: #222222;
+  z-index: 9999;
+  /* Поверх ВСЕГО */
+  /*    * НАЧАЛЬНОЕ СОСТОЯНИЕ:
+  * Квадрат 500x500px ровно по центру.
+  */
+  clip-path: polygon(calc(50% - 250px) calc(50% - 250px), calc(50% + 250px) calc(50% - 250px), calc(50% + 250px) calc(50% + 250px), calc(50% - 250px) calc(50% + 250px));
 }/*# sourceMappingURL=main.css.map */

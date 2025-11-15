@@ -132,104 +132,13 @@ if (document.querySelector(".partners-slider")) {
   });
 }
 
-/* ===== 4. GSAP АНИМАЦИИ ===== */
-window.addEventListener("load", () => {
+// ======================================================================
+// ===== 4. ВСЕ АНИМАЦИИ СТРАНИЦЫ (ЗАПУСК ПОСЛЕ INTRO) =====
+// ======================================================================
+
+function startPageAnimations() {
+  // Эта функция теперь содержит ТОЛЬКО ScrollTrigger анимации
   if (gsapLoaded && document.body.classList.contains("index")) {
-    // --- HERO ANIMATIONS ---
-    const heroTl = gsap.timeline();
-
-    heroTl.from(
-      ".hero__title h1",
-      {
-        duration: 1.2,
-        y: -50,
-        opacity: 0,
-        ease: "power3.out",
-        delay: 0.3,
-      },
-      0
-    );
-
-    heroTl.from(
-      ".header",
-      {
-        duration: 1.2,
-        y: -50,
-        opacity: 0,
-        ease: "power3.out",
-      },
-      0.3
-    );
-
-    heroTl.from(
-      ".hero__description",
-      {
-        duration: 1.2,
-        y: -15,
-        opacity: 0,
-        ease: "power3.out",
-      },
-      0.3
-    );
-
-    heroTl.from(
-      ".hero__video__title",
-      {
-        duration: 1.5,
-        y: 80,
-        opacity: 0,
-        ease: "power3.out",
-      },
-      0.3
-    );
-
-    heroTl.from(
-      ".hero__video__img",
-      {
-        duration: 1.2,
-        y: 30,
-        opacity: 0,
-        ease: "power3.out",
-      },
-      0.3
-    );
-
-    gsap.fromTo(
-      ".hero__portfolio__link",
-      {
-        y: 100,
-        opacity: 0,
-        transition: "none",
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        delay: 0.3,
-        ease: "power3.out",
-        clearProps: "all",
-      }
-    );
-
-    // Анимация появления пагинации
-    gsap.fromTo(
-      ".swiper-pagination, .hero-slider-prev, .hero-slider-next",
-      {
-        y: 30,
-        opacity: 0,
-        transition: "none",
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        delay: 0.3,
-        ease: "power3.out",
-      }
-    );
-
-    // === ЗДЕСЬ БЫЛ КОД ИСЧЕЗНОВЕНИЯ, Я ЕГО УДАЛИЛ ===
-
     /* ===== PARALLAX HERO ===== */
     if (document.querySelector(".hero-slider")) {
       gsap.to(".hero-slider", {
@@ -429,7 +338,15 @@ window.addEventListener("load", () => {
       }
     );
 
-    gsap.fromTo(
+    const headmasterInfoTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".headmaster__info",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    headmasterInfoTl.fromTo(
       ".headmaster__info",
       {
         webkitMaskImage: "linear-gradient(90deg, transparent 60%, black 60%)",
@@ -438,24 +355,22 @@ window.addEventListener("load", () => {
       {
         webkitMaskImage: "linear-gradient(90deg, transparent 0%, black 0%)",
         maskImage: "linear-gradient(90deg, transparent 0%, black 0%)",
-        scrollTrigger: {
-          trigger: ".headmaster__info",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
         duration: 1.5,
         ease: "power3.out",
-      }
+      },
+      0
     );
 
-    gsap.from(".headmaster__inner", {
-      scrollTrigger: { trigger: ".headmaster__info", start: "top 80%" },
-      x: 30,
-      opacity: 0,
-      duration: 1.4,
-      delay: 0.3,
-      ease: "power3.out",
-    });
+    headmasterInfoTl.from(
+      ".headmaster__inner",
+      {
+        x: 30,
+        opacity: 0,
+        duration: 1.4,
+        ease: "power3.out",
+      },
+      0.3
+    );
 
     /* ===== APPROACH SECTION ===== */
     gsap.set(".approach__list", { gap: 0 });
@@ -496,5 +411,91 @@ window.addEventListener("load", () => {
       },
       "<"
     );
+  }
+}
+
+// ======================================================================
+// ===== 5. ЗАПУСК АНИМАЦИЙ (INTRO + ОСНОВНЫЕ) =====
+// ======================================================================
+
+window.addEventListener("load", () => {
+  // Анимация запускается ТОЛЬКО на главной (index)
+  if (gsapLoaded && document.body.classList.contains("index")) {
+    // Вся страница (header, swiper) уже загрузилась.
+    // Поверх нее лежит прелоадер (квадрат 500x500).
+
+    const preloader = document.querySelector(".preloader");
+    const header = document.querySelector(".header");
+
+    // Прячем хедер и весь контент Hero, чтобы они могли красиво появиться
+    gsap.set(header, { opacity: 0 });
+    gsap.set(
+      [
+        ".hero__title",
+        ".hero__description",
+        ".hero__video",
+        ".hero__portfolio__link",
+        ".swiper-pagination",
+        ".hero-slider-prev",
+        ".hero-slider-next",
+      ],
+      { opacity: 0 }
+    );
+
+    // 1. Создаем главный INTRO-таймлайн
+    const introTl = gsap.timeline({
+      onComplete: () => {
+        // Когда все закончится, прячем прелоадер
+        if (preloader) {
+          preloader.style.display = "none";
+        }
+        // ... и запускаем все 'scroll-trigger' анимации
+        startPageAnimations();
+      },
+    });
+
+    // 2. Анимация "Расширения" (квадратик расходится)
+    introTl.to(preloader, {
+      // Анимируем clip-path из квадрата 500x500
+      // до гигантского квадрата, который "выходит" за экран
+      clipPath: "polygon(-100% -100%, 200% -100%, 200% 200%, -100% 200%)",
+      duration: 2.0, // Твои 2 секунды
+      ease: "power2.inOut",
+    });
+
+    // 3. Анимация появления Hero-контента (ОДНОВРЕМЕННО)
+    introTl.to(
+      [
+        ".hero__title",
+        ".hero__description",
+        ".hero__video",
+        ".hero__portfolio__link",
+        ".swiper-pagination",
+        ".hero-slider-prev",
+        ".hero-slider-next",
+      ],
+      {
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.1, // Элементы появляются друг за другом
+      },
+      0.5 // Начать через 0.5с после старта "раскрытия"
+    );
+
+    // 4. Анимация появления Хедера (ОДНОВРЕМЕННО)
+    introTl.to(
+      header,
+      {
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      },
+      0.3 // Начать почти сразу
+    );
+  } else {
+    // На всех ДРУГИХ страницах (portfolio)
+    // просто запускаем scroll-анимации
+    startPageAnimations();
   }
 });
