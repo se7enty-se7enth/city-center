@@ -279,6 +279,7 @@ noscript {
   max-width: 244px;
   position: relative;
   overflow: hidden;
+  color: #fff;
 }
 
 .title {
